@@ -1,4 +1,41 @@
-import { useState } from 'react'
+import './App.css';
+import { Player } from '@lottiefiles/react-lottie-player';
+import animationData from './assets/Loading animation.json';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
+
+function Loading() {
+  return (
+    <Player
+      autoplay
+      loop
+      src={animationData}
+      style={{ height: '300px', width: '300px' }}
+    />
+  );
+}
+
+function App() {
+  useEffect(() => {
+    toast.info('Projem üzerinde çalışıyorum ✨🚀');
+    toast.info('Working on my project ✨🚀');
+  }, []);
+
+  return (
+    <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center' }}>
+      <Loading />
+      <p>Loading…</p>
+      <ToastContainer />
+    </div>
+  );
+}
+
+export default App;
+
+{
+  /* import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -32,4 +69,5 @@ function App() {
   )
 }
 
-export default App
+export default App */
+}
